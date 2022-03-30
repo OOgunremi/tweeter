@@ -1,0 +1,40 @@
+.new-tweet {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+}
+.new-tweet form {
+  width: 100%;
+}
+#tweet-text {
+  display: flex;
+  width: 100%;
+  background: none;
+  border: 0;
+  border-bottom: 3px solid #666;
+  margin-bottom: 15px;
+}
+.tweetingBoxFooter {
+  display: flex;
+  justify-content:space-between;
+}
+.tweetButton {
+  background-color: #4056A1;
+  color: white;
+  font-family: Bungee, cursive;
+}
+.tweetingBoxFooter output {
+  display: flex;
+  font-family: Bungee, cursive;
+}
+
+article {
+  margin-top: 45px;
+  display: flex;
+  background-color: #f4f1ec;
+  width: 100%;
+  height: 200px;
+  border: 3px solid #666;
+  margin-bottom: 3px;
+}
