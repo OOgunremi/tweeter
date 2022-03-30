@@ -43,13 +43,45 @@ article {
   flex-direction: column;
 }
 article header {
+  color: #666;
   background-color: #f4f1ec;
   background-image: none;
-  width: 100%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: large;
 }
 .tweetsMiddle {
+  width: 95%;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  border-bottom: 3px solid #666;
+  padding-bottom: 25px;
+  margin-bottom: 15px;
+  font-size: larger;
 
 }
 article footer {
+  width:100%;
+  display: flex;
+  justify-content: space-around;
 
+}
+article footer .daysCounter {
+  font-size: large;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+article footer i {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+}
+
+article footer i:hover {
+  color: red;
 }
