@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-let initialTweets = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1648500657736
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1648587057736
-  }
-];
 let renderTweets = function (tweets) {
   let tweetsContainer = $('.tweets').html(''); //resets the elements in the tweets container
 
@@ -36,7 +11,6 @@ let renderTweets = function (tweets) {
     let tweetHTML = createTweetElement(tweet);
     tweetsContainer.prepend(tweetHTML);
   }
-
 };
 
 let createTweetElement = function(tweet) {
@@ -46,7 +20,6 @@ let createTweetElement = function(tweet) {
       <img src="${tweet.user.avatars}" alt="avatar"/>
       <span>${tweet.user.name}</span>
     </div>
-    
     <div class=tweetsHeader>
     ${tweet.user.handle}
     </div>
@@ -66,22 +39,27 @@ let createTweetElement = function(tweet) {
 };
 
 //This wait for the page to load before calling the callback
-$(document).ready(function() {
-  renderTweets(initialTweets);
-
+$(document).ready(function () {
   //This is the submit handler
   $("#tweet-form").submit(function (event) {
     event.preventDefault();
     $("#tweet-text").val();
-    console.log($(this).serialize());
 
     //This is where we will add the new post request
     const url = '/tweets/';
     const data = $(this).serialize();
-    const callback = function(data, status) {
+    const callback = function (data, status) {
       console.log(data, status);
     };
     $.post(url, data, callback);
+
   });
+  
+  const loadtweets = function () {
+    $.get('/tweets', function (data, status) {
+      renderTweets(data);
+    });
+  };
+  loadtweets();
 });
 
