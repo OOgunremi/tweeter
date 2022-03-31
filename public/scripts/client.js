@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 let initialTweets = [
   {
     "user": {
@@ -64,6 +65,23 @@ let createTweetElement = function(tweet) {
 
 };
 
+//This wait for the page to load before calling the callback
 $(document).ready(function() {
   renderTweets(initialTweets);
+
+  //This is the submit handler
+  $("#tweet-form").submit(function (event) {
+    event.preventDefault();
+    $("#tweet-text").val();
+    console.log($(this).serialize());
+
+    //This is where we will add the new post request
+    const url = '/tweets/';
+    const data = $(this).serialize();
+    const callback = function(data, status) {
+      console.log(data, status);
+    };
+    $.post(url, data, callback);
+  });
 });
+
