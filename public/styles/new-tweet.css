@@ -87,3 +87,15 @@ footer i:hover {
   color: red;
   cursor: pointer;
 }
+#error-message-empty{
+  color: red;
+  text-align: center;
+  margin: 0;
+  display: block;
+}
+#error-message-toolong{
+  color: red;
+  text-align: center;
+  margin: 0;
+  display: block;
+}

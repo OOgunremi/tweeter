@@ -12,6 +12,12 @@ let renderTweets = function (tweets) {
     tweetsContainer.prepend(tweetHTML);
   }
 };
+const escapeHacks = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 
 let createTweetElement = function(tweet) {
   let tweetHTML = `<article class="tweetsArticle">
@@ -24,7 +30,7 @@ let createTweetElement = function(tweet) {
     ${tweet.user.handle}
     </div>
   </header>
-  <div class="tweetsMiddle">${tweet.content.text}</div>
+  <div class="tweetsMiddle">${escapeHacks(tweet.content.text)}</div>
   <footer class="article-footer">
     <div class=daysCounter>${timeago.format(tweet.created_at)}</div>
     <div class=footerIcons>
@@ -35,28 +41,43 @@ let createTweetElement = function(tweet) {
   </footer>
 </article>`;
   return tweetHTML;
-
 };
 
 //This wait for the page to load before calling the callback
-$(document).ready(function () {
+$(document).ready(function() {
+  $("#error-message-toolong").hide();
+  $("#error-message-empty").hide();
   //This is the submit handler
-  $("#tweet-form").submit(function (event) {
+  $("#tweet-form").submit(function(event) {
     event.preventDefault();
-    $("#tweet-text").val();
+    let tweetValue = $("#tweet-text").val().trim();
 
-    //This is where we will add the new post request
-    const url = '/tweets/';
-    const data = $(this).serialize();
-    const callback = function (data, status) {
-      console.log(data, status);
-    };
-    $.post(url, data, callback);
+    if (!tweetValue) {
+      $("#error-message-empty").slideDown();
+    } else if (tweetValue.length > 140) {
+      $("#error-message-toolong").slideDown();
+    } else {
+      $("#error-message-toolong").slideUp();
+      $("#error-message-empty").slideUp();
 
+      //This is where we will add the new post request
+      const url = '/tweets/';
+      const data = $(this).serialize();
+      $.ajax({
+        url: "/tweets/",
+        type: "post",
+        data: data
+      }).then((data) => {
+        console.log('tweet sent');
+        loadtweets();
+        $("#tweet-text").val("");
+        $("#tweet-text").next().find('.counter')[0]['innerText'] = 140;
+      });
+    }
   });
   
-  const loadtweets = function () {
-    $.get('/tweets', function (data, status) {
+  const loadtweets = function() {
+    $.get('/tweets', function(data, status) {
       renderTweets(data);
     });
   };

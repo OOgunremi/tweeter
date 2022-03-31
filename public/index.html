@@ -54,6 +54,8 @@
       <main class="container">
         <section class="new-tweet">
           <form id="tweet-form" action="/tweets/" method="POST">
+            <p id="error-message-empty">Please, type in something to tweet</p>
+            <p id="error-message-toolong">Maximum characters allowed is 140</p>
             <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
             <div class='tweetingBoxFooter'>
               <button class="tweetButton" type="submit">Tweet</button>
