@@ -5,20 +5,24 @@
  */
 
 let renderTweets = function (tweets) {
-  let tweetsContainer = $('.tweets').html(''); //resets the elements in the tweets container
+  //resets the elements in the tweets container
+  let tweetsContainer = $('.tweets').html('');
 
-  for (let tweet of tweets) { //loops throough all the tweets
+  //loops through all the array of tweets and prepends HTML formated tweeta for chronological display
+  for (let tweet of tweets) {
     let tweetHTML = createTweetElement(tweet);
     tweetsContainer.prepend(tweetHTML);
   }
 };
+
+//protects against XSS Hacks
 const escapeHacks = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-
+//function takes in raw tweet object and returns HTML formated tweet
 let createTweetElement = function(tweet) {
   let tweetHTML = `<article class="tweets-article">
   <header class="article-header">
@@ -43,24 +47,31 @@ let createTweetElement = function(tweet) {
   return tweetHTML;
 };
 
-//This wait for the page to load before calling the callback
+//waits for the page to fully load before calling the callback
 $(document).ready(function() {
+
   $("#error-message-toolong").hide();
   $("#error-message-empty").hide();
+  
   //This is the submit handler
   $("#tweet-form").submit(function(event) {
+    //prevents route redirection upon submission
     event.preventDefault();
-    let tweetValue = $("#tweet-text").val().trim();
 
+    //grabs tweet values excluding spaces at begining and the end
+    let tweetValue = $("#tweet-text").val().trim();
+    //checks if no character was typed or if excess was typed, returns error messages accordingly
     if (!tweetValue) {
       $("#error-message-empty").slideDown();
     } else if (tweetValue.length > 140) {
       $("#error-message-toolong").slideDown();
     } else {
+
+      // Clears error messages
       $("#error-message-toolong").slideUp();
       $("#error-message-empty").slideUp();
-
-      //This is where we will add the new post request
+      
+      // POST request after errors screening
       const url = '/tweets/';
       const data = $(this).serialize();
       $.ajax({
@@ -68,14 +79,16 @@ $(document).ready(function() {
         type: "post",
         data: data
       }).then((data) => {
-        console.log('tweet sent');
+        //loads tweet GET request automatically without browser refresh
         loadtweets();
+        //resets character counters after POST
         $("#tweet-text").val("");
         $("#tweet-text").next().find('.counter')[0]['innerText'] = 140;
       });
     }
   });
   
+  // GET request function
   const loadtweets = function() {
     $.get('/tweets', function(data, status) {
       renderTweets(data);

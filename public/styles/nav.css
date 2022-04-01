@@ -1,3 +1,4 @@
+  /* the settings for the navigation element */
 nav {
   display: flex;
   justify-content: space-between;
@@ -5,7 +6,6 @@ nav {
   background-color: #4056A1;
   background-color: #cc9b06;
   background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
-
   height: 100px;
   width: 100%;
   padding: 1.5em;
@@ -13,12 +13,16 @@ nav {
   top: 0;
 }
 
+  /* the twitter logo */
 .logo {
   font-family: Bungee, cursive;
   font-size: 2.5em;
   color: #FFFFFF;
 }
-@media only screen and (max-width: 1000px) {
+
+/* the responsive settings for Navigation element for wide screens */
+@media only screen and (max-width: 1024px) {
+  /* the text on the navigation elemnt */
 .nav-write-new-tweet {
 float: right;
 display: flex;
@@ -27,16 +31,14 @@ justify-content: space-between;
 align-items: center;
 color: #FFFFFF;
 }
+  /* the red arrow on navigation element */
 .fas {
  float: right;
  color: red;
 }
 }
-
-
-
-
-@media only screen and (min-width: 1000px) {
+  /* the responsive settings of wide screens  for navigation element*/
+@media only screen and (min-width: 1024px) {
   nav {
     display: flex;
     justify-content: space-between;

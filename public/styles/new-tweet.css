@@ -1,3 +1,4 @@
+/* This targets the HTML section class that contains the form input  */
 .class-new-tweet {
   display: flex;
   justify-content:center;
@@ -5,10 +6,11 @@
   width: 100%;
   margin-right: 3em;
 }
+/* targets the form element */
 .class-new-tweet form {
   width: 100%;
 }
-
+/* text area element */
 #tweet-text {
   display: flex;
   width: 100%;
@@ -19,29 +21,15 @@
   resize: none;
   outline: none;
 }
-
+/* This targets the HTML section class that contains the old tweets being displayed  */
+.tweets {
+  width: 100%;
+  margin-right: 3em;
+}
+/* article class rendering the old tweets */
 .tweets-article:hover {
-  box-shadow: 10px 5px 5px grey;;
-
+  box-shadow: 10px 5px 5px grey;
 }
-.tweeting-box-footer {
-  display: flex;
-  justify-content:space-between;
-}
-.tweet-button {
-  background-color: #4056A1;
-  color: white;
-  font-family: Bungee, cursive;
-}
-.tweet-button:hover {
-  border-width: 5px;
-  border-color: rgb(17, 0, 255);
-}
-.tweeting-box-footer output {
-  display: flex;
-  font-family: Bungee, cursive;
-}
-
 .tweets-article {
   width: 100%;
   display: flex;
@@ -59,16 +47,6 @@
   padding-right: 10px;
   display: flex;
 }
-.profile-name-avatar {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  gap: 5px;
-}
-.tweets-middle {
-  border-bottom: 3px solid #666;
-  padding: 20px;
-}
 .article-footer {
   display: flex;
   justify-content: space-between;
@@ -80,9 +58,14 @@ article footer .days-counter {
   align-items: left;
   justify-content: left;
 }
-.tweets {
-  width: 100%;
-  margin-right: 3em;
+/* tweets box footer element */
+.tweeting-box-footer {
+  display: flex;
+  justify-content:space-between;
+}
+.tweeting-box-footer output {
+  display: flex;
+  font-family: Bungee, cursive;
 }
 .footer-icons {
   display: flex;
@@ -97,6 +80,33 @@ footer i:hover {
   color: red;
   cursor: pointer;
 }
+/* tweet buttton element */
+.tweet-button {
+  background-color: #4056A1;
+  color: white;
+  font-family: Bungee, cursive;
+}
+.tweet-button:hover {
+  border-width: 5px;
+  border-color: rgb(17, 0, 255);
+}
+
+/* old tweets avatars */
+.profile-name-avatar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 5px;
+}
+/* texts in the old tweets */
+.tweets-middle {
+  border-bottom: 3px solid #666;
+  padding: 20px;
+}
+
+
+
+/* error messages elements */
 #error-message-empty{
   color: red;
   text-align: center;
@@ -108,20 +118,4 @@ footer i:hover {
   text-align: center;
   margin: 0;
   display: block;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (min-width: 1000px) {
-  
-
 }

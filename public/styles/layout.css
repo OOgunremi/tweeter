@@ -10,9 +10,7 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+/*Global layout stuff*/
 
 body {
   color: #545149;
@@ -20,12 +18,12 @@ body {
   font-size: 24px;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+/* Additional CSS can be defined below or in other CSS files, as per instructions*/
+
  body {
   font-family: 'Source Sans Pro', sans-serif;
 }
+/* the settings for the HTML main tag */
 .container {
   color: #545149;
   display: flex;
@@ -35,17 +33,13 @@ body {
   align-items: center;
   background-color: #f4f1ec;
   margin-left: 3em;
-
 }
 
-
-
-
-
-@media only screen and (min-width: 1000px) {
+/* the responsive settings for wide screens */
+@media only screen and (min-width: 1024px) {
   .container {
     margin-top: 6em;
     width: 45%;
-    float: right
+    float: right;
   }
 }

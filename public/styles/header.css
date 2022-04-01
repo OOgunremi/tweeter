@@ -1,11 +1,8 @@
-
-
+/*header settings for regular screens*/
 .main-header {
-  /* margin-top: 120px; */
   background-color: #cc9b06;
-  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
-
   /* background-image: url(); */
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   display: flex;
   justify-content: center;
   align-items:center;
@@ -14,24 +11,20 @@
   height: 500px;
   width: 100%;
 }
-/* strong { font-weight: bold; } */
+/* profile avatar settings */
 .avatar {
   margin-top: 6em;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-
-
-@media only screen and (min-width: 1000px) {
+/* responsive header settings for wide screens*/
+@media only screen and (min-width: 1024px) {
   .main-header {
     width: 45%;
     float: left;
     margin-left:2em;
     margin-top: 7em;
-
   }
-
 }
