@@ -20,20 +20,20 @@ const escapeHacks = function (str) {
 
 
 let createTweetElement = function(tweet) {
-  let tweetHTML = `<article class="tweetsArticle">
+  let tweetHTML = `<article class="tweets-article">
   <header class="article-header">
     <div class="profile-name-avatar">
       <img src="${tweet.user.avatars}" alt="avatar"/>
       <span>${tweet.user.name}</span>
     </div>
-    <div class=tweetsHeader>
+    <div class="tweets-header">
     ${tweet.user.handle}
     </div>
   </header>
-  <div class="tweetsMiddle">${escapeHacks(tweet.content.text)}</div>
+  <div class="tweets-middle">${escapeHacks(tweet.content.text)}</div>
   <footer class="article-footer">
-    <div class=daysCounter>${timeago.format(tweet.created_at)}</div>
-    <div class=footerIcons>
+    <div class="days-counter">${timeago.format(tweet.created_at)}</div>
+    <div class="footer-icons">
       <i class="fa-solid fa-flag"></i>
       <i class="fa-solid fa-retweet"></i>
       <i class="fa-solid fa-heart"></i>

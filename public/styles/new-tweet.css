@@ -1,11 +1,14 @@
-.new-tweet {
+.class-new-tweet {
   display: flex;
   justify-content:center;
   align-items: center;
   width: 100%;
 }
-.new-tweet form {
+.class-new-tweet form {
   width: 100%;
+}
+.container {
+  display: flex;
 }
 #tweet-text {
   display: flex;
@@ -18,25 +21,29 @@
   outline: none;
 }
 
-.tweetsArticle:hover {
+.tweets-article:hover {
   box-shadow: 10px 5px 5px grey;;
 
 }
-.tweetingBoxFooter {
+.tweeting-box-footer {
   display: flex;
   justify-content:space-between;
 }
-.tweetButton {
+.tweet-button {
   background-color: #4056A1;
   color: white;
   font-family: Bungee, cursive;
 }
-.tweetingBoxFooter output {
+.tweet-button:hover {
+  border-width: 5px;
+  border-color: rgb(17, 0, 255);
+}
+.tweeting-box-footer output {
   display: flex;
   font-family: Bungee, cursive;
 }
 
-.tweetsArticle {
+.tweets-article {
   width: 100%;
   display: flex;
   margin-top: 20px;
@@ -58,7 +65,7 @@
   padding: 10px;
   gap: 5px;
 }
-.tweetsMiddle {
+.tweets-middle {
   border-bottom: 3px solid #666;
   padding: 20px;
 }
@@ -67,14 +74,16 @@
   justify-content: space-between;
   padding: 5px 15px;
 }
-article footer .daysCounter {
+article footer .days-counter {
   font-size: large;
   display: flex;
   align-items: left;
   justify-content: left;
 }
-
-.footerIcons {
+.tweets {
+  width: 100%;
+}
+.footer-icons {
   display: flex;
   align-items: right;
   justify-content: right;
@@ -98,4 +107,120 @@ footer i:hover {
   text-align: center;
   margin: 0;
   display: block;
+
 }
+
+@media only screen and (min-width: 800px) {
+  .class-new-tweet {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+  }
+  .class-new-tweet form {
+    width: 100%;
+  }
+  .container {
+    display: flex;
+  }
+  #tweet-text {
+    display: flex;
+    width: 100%;
+    background: none;
+    border: 0;
+    border-bottom: 3px solid #666;
+    margin-bottom: 15px;
+    resize: none;
+    outline: none;
+  }
+  
+  .tweets-article:hover {
+    box-shadow: 10px 5px 5px grey;;
+  
+  }
+  .tweeting-box-footer {
+    display: flex;
+    justify-content:space-between;
+  }
+  .tweet-button {
+    background-color: #4056A1;
+    color: white;
+    font-family: Bungee, cursive;
+  }
+  .tweet-button:hover {
+    border-width: 5px;
+    border-color: rgb(17, 0, 255);
+  }
+  .tweeting-box-footer output {
+    display: flex;
+    font-family: Bungee, cursive;
+  }
+  
+  .tweets-article {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    border: 3px solid #666;
+    margin-bottom: 3px;
+    flex-direction: column;
+  }
+  .article-header {
+    color: #666;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+    display: flex;
+  }
+  .profile-name-avatar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+  }
+  .tweets-middle {
+    border-bottom: 3px solid #666;
+    padding: 20px;
+  }
+  .article-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px;
+  }
+  article footer .days-counter {
+    font-size: large;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+  .tweets {
+    width: 100%;
+  }
+  .footer-icons {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+  }
+  .fa-solid {
+    margin-left: 10px;
+  }
+  
+  footer i:hover {
+    color: red;
+    cursor: pointer;
+  }
+  #error-message-empty{
+    color: red;
+    text-align: center;
+    margin: 0;
+    display: block;
+  }
+  #error-message-toolong{
+    color: red;
+    text-align: center;
+    margin: 0;
+    display: block;
+  
+  }
+    
+  }

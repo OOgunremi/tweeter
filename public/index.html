@@ -6,7 +6,6 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet" type="text/css">
@@ -20,8 +19,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-
-
     <!-- App JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -33,7 +30,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <div class='logo'>tweeter</div> 
-      <div class='newTweet'>
+      <div class='nav-write-new-tweet'>
         <span><b>Write</b> a new tweet</span>
         <i class="fas fa-angle-double-down"></i>
       </div>
@@ -52,39 +49,39 @@
     </h1>
     <!-- Page-specific (main) content here -->
       <main class="container">
-        <section class="new-tweet">
+        <section class="class-new-tweet">
           <form id="tweet-form" action="/tweets/" method="POST">
             <p id="error-message-empty">Please, type in something to tweet</p>
             <p id="error-message-toolong">Maximum characters allowed is 140</p>
             <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-            <div class='tweetingBoxFooter'>
-              <button class="tweetButton" type="submit">Tweet</button>
+            <div class='tweeting-box-footer'>
+              <button class="tweet-button" type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
             </div>
           </form>
         </section>
         <section class="tweets">
-          <article class="tweetsArticle">
+          <!-- <article class="tweets-article">
             <header class="article-header">
               <div class="profile-name-avatar">
                 <img src="https://i.imgur.com/73hZDYK.png" alt="avatar"/>
                 <span> Newton</span>
               </div>
               
-              <div class=tweetsHeader>
+              <div class=tweets-header>
                @SirIsaac 
               </div>
             </header>
-            <div class="tweetsMiddle">Its a sunny day in Calgary!</div>
+            <div class="tweets-middle">Its a sunny day in Calgary!</div>
             <footer class="article-footer">
-              <div class=daysCounter>10 days ago</div>
-              <div class=footerIcons>
+              <div class=days-counter>10 days ago</div>
+              <div class=footer-icons>
                 <i class="fa-solid fa-flag"></i>
                 <i class="fa-solid fa-retweet"></i>
                 <i class="fa-solid fa-heart"></i>
               </div>
             </footer>
-          </article>
+          </article> -->
         </section>
 
       </main>

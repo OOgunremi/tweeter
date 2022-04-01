@@ -1,17 +1,15 @@
 
 
 $(document).ready(function () {
-  $('#tweet-text').keydown(function(e) {
-    //console.log($(this)[0].textLength);
+  $('#tweet-text').keypress(function(e) {
+    console.log($(this)[0].textLength);
     
-    ($(this).next().find('.counter')[0]['innerText'] = 140 - Number($(this)[0].textLength));
-    let $charactersLeft = 140 - Number($(this)[0].textLength);
-    // $text = $(this).val();
+    ($(this).next().find('.counter')[0]['innerText'] = 139 - Number($(this)[0].textLength));
+    let $charactersLeft = 139 - Number($(this)[0].textLength);
 
-    // if ($charactersLeft < 0) {
-    //   $counter.addClass("fontRed");
-    // } else {
-    //   $counter.removeClass("fontRed");
-    // }
+
+    if ($charactersLeft < -1) {
+      $(".counter").css('color', 'red');
+    }
   });
 });
